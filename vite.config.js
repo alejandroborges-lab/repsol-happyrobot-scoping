@@ -6,6 +6,7 @@ export default defineConfig({
   preview: {
     port: parseInt(process.env.PORT) || 4173,
     host: true,
+    allowedHosts: 'all',
   },
   server: {
     port: 5173,
