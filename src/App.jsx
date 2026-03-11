@@ -256,7 +256,7 @@ function CommercialView({ expandedCase, toggleCase }) {
       id: "others", name: "Otros Negocios (Variable)", vol: "Variable",
       priority: "P2", pColor: "gray", timeline: "Por definir *", fde: "—", confidence: 50,
       detail: {
-        description: "Cada negocio adicional fuera de VVDD y GLP requiere integraciones específicas con catálogos de producto diferentes. No bloquea MVP.",
+        description: "Cada negocio adicional fuera de VVDD y GLP requiere integraciones específicas con catálogos de producto diferentes. No bloquea el proyecto.",
         metrics: [],
         integrations: ["SAP BP5", "SAP UP2", "Nace"],
         advantages: ["Crecimiento a medio plazo", "Reutiliza lógica core del agente de pedidos"],
@@ -273,7 +273,7 @@ function CommercialView({ expandedCase, toggleCase }) {
           { label: "Llamadas/año objetivo", value: "~550K+", sub: "400K facturación + 150K titular" },
           { label: "Coste llamada humana", value: "3,5–4,5€", sub: "Mix tipologías · Sin CTI" },
           { label: "Target resolución", value: "30%", sub: "\"Les soluciona la vida\" — Repsol" },
-          { label: "Timeline MVP (1 FDE)", value: "~3 meses", sub: "Secuencial · 3 casos core" },
+          { label: "Timeline (1 FDE)", value: "~3 meses", sub: "Secuencial · 3 casos core" },
         ].map((k, i) => (
           <div key={i} className="bg-white rounded-xl border border-gray-200 p-4">
             <p className="text-xs text-gray-500 mb-1">{k.label}</p>
@@ -312,7 +312,7 @@ function CommercialView({ expandedCase, toggleCase }) {
                 </tr>
               ))}
               <tr className="bg-gray-100 font-semibold">
-                <td className="px-4 py-3 text-gray-900">Total MVP (3 casos core)</td>
+                <td className="px-4 py-3 text-gray-900">Total (3 casos core)</td>
                 <td className="text-center px-3 py-3"><span className="bg-blue-100 text-blue-800 font-bold text-xs px-2 py-0.5 rounded">1 FDE</span></td>
                 <td className="text-center px-3 py-3 text-gray-900">~12</td>
                 <td className="text-center px-3 py-3 text-gray-600">550K+</td>
@@ -514,7 +514,7 @@ function TechnicalView({ expandedCase, toggleCase }) {
             { sys: "SAP ISU", method: "API/RFC", complexity: "Alto", status: "Necesario para cambio titular",
               detail: "Leer y escribir en múltiples pasos del proceso guiado de cambio de titular. Interacción con Robin Home para XML a distribuidora. Salesforce debe ser SSOT: nosotros NO mandamos XML, hacemos que SF lance el proceso." },
             { sys: "SAP BP5 / UP2 / Nace", method: "API/RFC", complexity: "Alto", status: "Solo Fase 2 (Otros negocios)",
-              detail: "Cada negocio adicional fuera de VVDD y GLP requiere integración con un SAP distinto y catálogo de productos diferente. No bloquea MVP." },
+              detail: "Cada negocio adicional fuera de VVDD y GLP requiere integración con un SAP distinto y catálogo de productos diferente. No bloquea el proyecto." },
             { sys: "OTP / Validación Identidad", method: "Sistema determinista", complexity: "Bajo", status: "Existente",
               detail: "No agéntico. OTP por email al cliente registrado. Agente no avanza hasta confirmación. Doble capa: sistema valida + agente cambia de estado interno (no validado → validado)." },
           ].map((intg, i) => (
@@ -559,7 +559,7 @@ function TechnicalView({ expandedCase, toggleCase }) {
             { blocker: "Customización SF no reutilizable (cambio titular)", impact: "Medio", owner: "HappyRobot + Repsol", deadline: "Sesión técnica inicial",
               mitigation: "Si el componente Lightning custom no es invocable vía API, hay que reconstruir lógica → posible extensión." },
             { blocker: "Acceso a sistemas SAP (BP5, UP2, Nace)", impact: "Medio", owner: "Repsol", deadline: "Fase 2",
-              mitigation: "No bloquea MVP. VVDD solo usa SF. Cada SAP adicional suma tiempo." },
+              mitigation: "No bloquea el proyecto. VVDD solo usa SF. Cada SAP adicional suma tiempo." },
             { blocker: "Velocidad de respuesta equipo técnico Repsol", impact: "Medio", owner: "Repsol", deadline: "Transversal",
               mitigation: "Equipo ya establecido (Marta, Ana, Luis). Riesgo de bottleneck si tienen otras prioridades." },
           ].map((b, i) => (
